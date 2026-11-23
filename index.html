@@ -1,0 +1,249 @@
+/* Color Palette Variables */
+:root {
+    --bg-canvas: #f1f5f9;
+    --bg-card: #ffffff;
+    --bg-row-alt: #f8fafc;
+    --bg-row-hover: #e0f2fe;
+    --bg-focus: #f0f9ff;
+
+    --text-ink: #0f172a;
+    --text-muted: #475569;
+    --text-on-dark: #ffffff;
+
+    --brand-navy: #1e293b;
+    --brand-navy-dark: #0f172a;
+    --action-green: #15803d;
+    --action-green-hover: #166534;
+    --focus-blue: #0284c7;
+
+    --border-card: #e2e8f0;
+    --border-input: #cbd5e1;
+
+    --radius-card: 12px;
+    --radius-control: 8px;
+}
+
+/* Reset & Typography */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-ink);
+    background-color: var(--bg-canvas);
+    padding: 28px 20px;
+}
+
+h1,
+h2 {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--brand-navy);
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--bg-canvas);
+}
+
+/* Box Model & Card Layout */
+.main-header,
+.container {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-header {
+    background-color: var(--brand-navy);
+    color: var(--text-on-dark);
+    border: 1px solid var(--brand-navy-dark);
+    border-radius: var(--radius-card);
+    padding: 22px 26px;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.main-header h1 {
+    color: var(--text-on-dark);
+}
+
+.subtitle {
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-top: 4px;
+}
+
+.instructions {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--focus-blue);
+    border-radius: var(--radius-card);
+    padding: 16px 20px;
+    margin-bottom: 24px;
+}
+
+.instructions summary {
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    color: var(--brand-navy);
+    cursor: pointer;
+}
+
+.instructions p {
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+.add-expense-section,
+.expenses-section,
+.video-section {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-card);
+    padding: 24px 26px;
+    margin-bottom: 24px;
+}
+
+/* Form & Button Styling */
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group > label {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--brand-navy);
+    margin-bottom: 6px;
+}
+
+input:not([type="submit"]),
+select {
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 0.96rem;
+    color: var(--text-ink);
+    background-color: var(--bg-card);
+    border: 1.5px solid var(--border-input);
+    border-radius: var(--radius-control);
+    padding: 11px 14px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid var(--focus-blue);
+    outline-offset: 1px;
+    border-color: var(--focus-blue);
+    background-color: var(--bg-focus);
+}
+
+button {
+    font-family: "Inter", sans-serif;
+    font-size: 0.96rem;
+    font-weight: 600;
+    color: var(--text-on-dark);
+    background-color: var(--action-green);
+    border: 1.5px solid var(--action-green);
+    border-radius: var(--radius-control);
+    padding: 12px 22px;
+    margin-top: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--action-green-hover);
+    border-color: var(--action-green-hover);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--focus-blue);
+    outline-offset: 2px;
+}
+
+/* Table Styling */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-control);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+thead th {
+    font-family: "Inter", sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-on-dark);
+    background-color: var(--brand-navy);
+    padding: 13px 16px;
+    border-bottom: 2px solid var(--brand-navy-dark);
+}
+
+.expenses-section td {
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-ink);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-card);
+}
+
+.amount {
+    font-variant-numeric: tabular-nums;
+    font-weight: 500;
+}
+
+tbody tr:nth-child(even) {
+    background-color: var(--bg-row-alt);
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody tr:hover {
+    background-color: var(--bg-row-hover);
+}
+
+/* Video Section */
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 4px;
+}
+
+iframe {
+    max-width: 100%;
+    border: 1px solid var(--border-card);
+    border-radius: var(--radius-control);
+}
